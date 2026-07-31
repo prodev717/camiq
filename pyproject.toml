@@ -1,0 +1,11 @@
+[project]
+name = "camiq"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ollama>=0.6.2",
+    "scikit-image>=0.26.0",
+    "ultralytics>=8.4.113",
+]
