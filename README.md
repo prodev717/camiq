@@ -1,1 +1,3 @@
-# AI-Based Natural Language Search and Retrieval System for CCTV Surveillance Videos.
+# AI-Based Natural Language Search and Retrieval System for CCTV Surveillance Videos
+
+This project is a lightweight AI-powered system that enables natural language search over CCTV surveillance videos. It uses **SigLIP** to generate semantic embeddings for video frames, allowing users to retrieve relevant moments by simply describing what they are looking for (e.g., *"person carrying a backpack"* or *"car parked near the entrance"*). During indexing, the system removes static and near-duplicate frames using pixel-difference filtering and semantic similarity, making the indexing process faster and more storage-efficient. The indexed embeddings are stored locally, enabling fast retrieval of the most relevant frames along with their timestamps.
