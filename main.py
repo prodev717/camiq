@@ -33,10 +33,13 @@ SEMANTIC_SIM_THRESHOLD = 0.93       # cosine sim above this = "same as last kept
 
 model, _, preprocess = open_clip.create_model_and_transforms(
     "ViT-B-16-SigLIP",
-    pretrained="webli",
+    pretrained="open_clip_model.safetensors",
 )
 
-tokenizer = open_clip.get_tokenizer("ViT-B-16-SigLIP")
+tokenizer = open_clip.tokenizer.HFTokenizer(
+    "siglip_tokenizer", 
+    context_length=64
+)
 
 model = model.to(DEVICE).eval()
 
