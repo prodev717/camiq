@@ -1,0 +1,85 @@
+.section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+  animation: slideUp 0.4s var(--ease) both;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.85rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+/* Pulsing live dot */
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.dot::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--accent-green);
+  opacity: 0.4;
+  animation: pulse-ring 1.4s ease-out infinite;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.accentNum {
+  color: var(--accent-violet);
+}
+
+.queryChip {
+  padding: 0.2rem 0.7rem;
+  background: hsl(265,70%,20%);
+  border: 1px solid hsl(265,70%,35%);
+  border-radius: 99px;
+  color: hsl(265,80%,80%);
+  font-size: 0.78rem;
+  font-style: italic;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Responsive grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+/* Staggered card entrance */
+.grid > * {
+  animation: slideUp 0.45s var(--ease) both;
+}

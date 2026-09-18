@@ -1,0 +1,113 @@
+/* =========================================================
+   Camiq Design System — Global CSS
+   ========================================================= */
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Color palette */
+  --bg-base:        hsl(225, 25%, 7%);
+  --bg-surface:     hsl(225, 22%, 10%);
+  --bg-card:        hsl(225, 20%, 13%);
+  --bg-card-hover:  hsl(225, 18%, 16%);
+  --bg-input:       hsl(225, 20%, 11%);
+
+  --border:         hsl(225, 18%, 20%);
+  --border-focus:   hsl(265, 80%, 65%);
+
+  --accent-violet:  hsl(265, 80%, 65%);
+  --accent-cyan:    hsl(190, 90%, 55%);
+  --accent-green:   hsl(150, 70%, 50%);
+  --accent-amber:   hsl(38, 95%, 60%);
+  --accent-red:     hsl(0, 75%, 60%);
+
+  --gradient-main:  linear-gradient(135deg, var(--accent-violet) 0%, var(--accent-cyan) 100%);
+  --gradient-card:  linear-gradient(145deg, hsl(225,20%,14%) 0%, hsl(225,18%,12%) 100%);
+
+  --text-primary:   hsl(220, 15%, 92%);
+  --text-secondary: hsl(220, 12%, 62%);
+  --text-muted:     hsl(220, 10%, 42%);
+
+  /* Shadows */
+  --shadow-sm:   0 1px 3px hsl(0 0% 0% / 0.4);
+  --shadow-md:   0 4px 16px hsl(0 0% 0% / 0.5);
+  --shadow-lg:   0 8px 32px hsl(0 0% 0% / 0.6);
+  --shadow-glow: 0 0 24px hsl(265, 80%, 50% / 0.3);
+
+  /* Typography */
+  --font: 'Inter', system-ui, sans-serif;
+  --radius-sm:  6px;
+  --radius-md:  12px;
+  --radius-lg:  18px;
+  --radius-xl:  24px;
+
+  /* Transitions */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur:  200ms;
+}
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font);
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-surface); }
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* --- Utilities --- */
+.gradient-text {
+  background: var(--gradient-main);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-4px); }
+}
+
+.fade-in  { animation: fadeIn  0.4s var(--ease) both; }
+.slide-up { animation: slideUp 0.5s var(--ease) both; }
